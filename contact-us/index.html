@@ -6,6 +6,9 @@
     <title>Plataforma de Cursos Online</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        html, body {
+            height: 100vh;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -51,7 +54,6 @@
             padding: 1rem;
             background-color: #fff;
             text-align: center;
-            border-bottom: 1px solid #ddd;
         }
         .search-bar {
             display: flex;
@@ -117,11 +119,44 @@
             color: #FFF;
         }
         .container {
+            height: 100%;
             padding: 1rem;
             background-color: #fff;
             margin: 1rem;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        .contact-form h2 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .contact-form button {
+            background-color: #000080;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .contact-form button:hover {
+            background-color: #333;
         }
     </style>
 </head>
@@ -131,9 +166,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="../courses-dashboard/index.html">Home</a></li>
                 <li><a href="../about/index.html">Sobre</a></li>
-                <li><a href="../contact-us/index.html">Contato</a></li>
+                <li><a href="#">Contato</a></li>
                 <li><a href="../login.html">Logout</a></li>
             </ul>
         </nav>
@@ -143,34 +178,24 @@
     </header>
     <div class="container">
         <div class="welcome-message">
-            <h2>Olá! aluno</h2>
-            <p>O que podemos te ensinar hoje?</p>
+            <h2>Contato</h2>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Digite as palavras chave da busca">
-        </div>
-        <div class="courses">
-            <div class="course">
-                <h3>Fundamentos de programação com C#</h3>
-                <p>Nível: Medium</p>
-                <p>Duração: 72h</p>
-                <p>Score: ★★★☆☆</p>
-                <button><a href="../courses-detail/index.html">Ver detalhes</a></button>
-            </div>
-            <div class="course">
-                <h3>Design Paramétrico na prática</h3>
-                <p>Nível: Expert</p>
-                <p>Duração: 56h</p>
-                <p>Score: ★★★★☆</p>
-                <button><a href="../courses-detail/index.html">Ver detalhes</a></button>
-            </div>
-            <div class="course">
-                <h3>Desbravando os princípios do S.O.L.I.D</h3>
-                <p>Nível: Expert</p>
-                <p>Duração: 18h</p>
-                <p>Score: ★★★★★</p>
-                <button><a href="../courses-detail/index.html">Ver detalhes</a></button>
-            </div>
+        <div class="contact-form">
+            <form action="submit_form.php" method="post">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone">
+                
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
         </div>
     </div>
 </body>
