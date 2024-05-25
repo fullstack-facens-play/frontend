@@ -47,10 +47,11 @@
             height: 24px;
         }
         .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
+            padding: 1rem;
+            background-color: #fff;
+            margin: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .course-header {
             padding: 1rem;
@@ -164,7 +165,10 @@
             <p>(Clique para expandir)</p>
         </div>
         <div class="purchase-section">
-            <button>Comprar</button>
+            <form action="../course-payment/index.html">
+                <button type="submit">Comprar</button>
+            </form>
+
         </div>
     </div>
 </body>
