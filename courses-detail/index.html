@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Curso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #000080;
+            border-bottom: 1px solid #ddd;
+        }
+        nav {
+            flex: 1;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .header-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        .header-icons img {
+            width: 24px;
+            height: 24px;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+        }
+        .course-header {
+            padding: 1rem;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .course-header h1 {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin: 0;
+        }
+        .course-header .close-button {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .video-section {
+            width: 100%;
+            background-color: #000;
+        }
+        .video-section img {
+            width: 100%;
+            display: block;
+        }
+        .info-section {
+            padding: 1rem;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .info-section h2 {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin: 0 0 1rem 0;
+        }
+        .info-section p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+        .info-section .highlight {
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        .modules-section {
+            padding: 1rem;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .modules-section h2 {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin: 0 0 1rem 0;
+        }
+        .modules-section p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+        .purchase-section {
+            padding: 1rem;
+            background-color: #fff;
+            text-align: center;
+        }
+        .purchase-section button {
+            background-color: #000080;
+            color: white;
+            border: none;
+            padding: 0.5rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .purchase-section button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-icons">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../courses-dashboard/index.html">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="../login.html">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <img src="../images/icons/profile-icon.png" alt="Profile">
+        </div>
+    </header>
+    <div class="container">
+        <div class="course-header">
+            <h1>Fundamentos da programação com C#</h1>
+            <span class="close-button">&times;</span>
+        </div>
+        <div class="video-section">
+            <img src="https://via.placeholder.com/600x300?text=Video+Player" alt="Video Player">
+        </div>
+        <div class="info-section">
+            <h2>Ficha técnica</h2>
+            <p><span class="highlight">Duração:</span> 72 horas</p>
+            <p><span class="highlight">Nível:</span> Medium</p>
+            <p><span class="highlight">Professor:</span> João da Silva</p>
+            <p><span class="highlight">Preço:</span> R$ 255,70</p>
+        </div>
+        <div class="modules-section">
+            <h2>Resumo dos módulos</h2>
+            <p>(Clique para expandir)</p>
+        </div>
+        <div class="purchase-section">
+            <button>Comprar</button>
+        </div>
+    </div>
+</body>
+</html>

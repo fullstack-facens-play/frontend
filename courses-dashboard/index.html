@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Cursos Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #000080;
+            border-bottom: 1px solid #ddd;
+        }
+        nav {
+            flex: 1;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .header-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        .header-icons img {
+            width: 24px;
+            height: 24px;
+        }
+        .welcome-message {
+            padding: 1rem;
+            background-color: #fff;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .courses {
+            padding: 1rem;
+        }
+        .course {
+            background-color: #fff;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .course h3 {
+            margin: 0;
+            color: #333;
+        }
+        .course p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+        .course button {
+            background-color: #000080;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .course button:hover {
+            background-color: #333;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.5rem 0;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        a, a:active {
+            text-decoration: none;
+            color: #FFF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-icons">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="../login.html">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <img src="../images/icons/profile-icon.png" alt="Profile">
+        </div>
+    </header>
+    <div class="welcome-message">
+        <h2>Olá! aluno</h2>
+        <p>O que podemos te ensinar hoje?</p>
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Digite as palavras chave da busca">
+    </div>
+    <div class="courses">
+        <div class="course">
+            <h3>Fundamentos de programação com C#</h3>
+            <p>Nível: Medium</p>
+            <p>Duração: 72h</p>
+            <p>Score: ★★★☆☆</p>
+            <button><a href="../courses-detail/index.html">Ver detalhes</a></button>
+        </div>
+        <div class="course">
+            <h3>Design Paramétrico na prática</h3>
+            <p>Nível: Expert</p>
+            <p>Duração: 56h</p>
+            <p>Score: ★★★★☆</p>
+            <button><a href="../courses-detail/index.html">Ver detalhes</a></button>
+        </div>
+        <div class="course">
+            <h3>Desbravando os princípios do S.O.L.I.D</h3>
+            <p>Nível: Expert</p>
+            <p>Duração: 18h</p>
+            <p>Score: ★★★★★</p>
+            <button><a href="../courses-detail/index.html">Ver detalhes</a></button>
+        </div>
+    </div>
+</body>
+</html>
