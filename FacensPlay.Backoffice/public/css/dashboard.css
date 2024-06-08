@@ -1,0 +1,117 @@
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #000080;
+            border-bottom: 1px solid #ddd;
+        }
+        nav {
+            flex: 1;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .header-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        .header-icons img {
+            width: 24px;
+            height: 24px;
+        }
+        .welcome-message {
+            padding: 1rem;
+            background-color: #fff;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .courses {
+            padding: 1rem;
+        }
+        .course {
+            background-color: #fff;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .course h3 {
+            margin: 0;
+            color: #333;
+        }
+        .course p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+        .course button {
+            background-color: #000080;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .course button:hover {
+            background-color: #333;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.5rem 0;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        a, a:active {
+            text-decoration: none;
+            color: #FFF;
+        }
+        .container {
+            padding: 1rem;
+            background-color: #fff;
+            margin: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
