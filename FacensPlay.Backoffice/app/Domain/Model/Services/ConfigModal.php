@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Models\Services;
+namespace App\Domain\Model\Services;
 
 class ConfigModal 
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Add\Domain\Interfaces\Services;
+namespace App\Domain\Interfaces\Services;
 
 use App\Domain\Interfaces\Services\IServiceBase;
 

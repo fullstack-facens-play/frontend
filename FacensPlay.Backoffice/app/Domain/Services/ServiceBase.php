@@ -8,8 +8,8 @@ use App\Domain\Enum\HttpMethod;
 use App\Domain\Factories\FactoryBase;
 use App\Domain\Filter\FilterBase;
 use App\Domain\Interfaces\Services\IServiceBase;
-use App\Domain\Models\Services\ConfigModal;
-use App\Domain\Models\Services\ConfigView;
+use App\Domain\Model\Services\ConfigModal;
+use App\Domain\Model\Services\ConfigView;
 use App\Domain\Validators\ValidatorBase;
 use Illuminate\Http\Request;
 

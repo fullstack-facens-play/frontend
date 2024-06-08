@@ -2,7 +2,7 @@
 
 namespace App\Domain\Interfaces\Services;
 
-use App\Domain\Models\Services\ConfigModal;
+use App\Domain\Model\Services\ConfigModal;
 
 interface IAlertService 
 {

@@ -24,8 +24,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $channels = $this->userService->getAllPaging();
-        return view('components/channel/index', compact('users'));
+        $users = $this->userService->getAllPaging();
+        return view('components/user/index', compact('users'));
     }
     
         /**

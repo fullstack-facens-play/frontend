@@ -3,8 +3,8 @@
 namespace App\Domain\Validators;
 
 use App\Domain\Interfaces\Validators\IValidatorBase;
-use App\Domain\Models\Validators\ValidatorConfigBase;
-USE App\Domain\Models\Validators\ValidatorConfigMessages;
+use App\Domain\Model\Validators\ValidatorConfigBase;
+USE App\Domain\Model\Validators\ValidatorConfigMessages;
 use Illuminate\Http\Request;
 
 abstract class ValidatorBase implements IValidatorBase

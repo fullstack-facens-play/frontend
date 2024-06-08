@@ -3,7 +3,7 @@
 namespace App\Domain\Services;
 
 use App\Domain\Interfaces\Services\IAlertService;
-use App\Domain\Models\Services\ConfigModal;
+use App\Domain\Model\Services\ConfigModal;
 
 class AlertService implements IAlertService
 {

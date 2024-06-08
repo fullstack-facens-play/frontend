@@ -77,8 +77,14 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            @yield('conteudo')
         </main>
     </div>
 </body>
+
+@section('js')
+    <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/common.js') }}" type="text/javascript"></script>
+@stop
+
 </html>
