@@ -34,7 +34,7 @@
                @endif
             </div>
             <div class="form-group col-md-4">
-               <label for="name">* {{__('general.password')}}</label>
+               <label for="name">* {{__('general.repeat_password')}}</label>
                <input required type="password" class="form-control  {{ $errors->has('repeat_password') ? 'is-invalid' : '' }}" id="repeat_password" name="repeat_password" placeholder="{{__('general.repeat_password')}}">
                @if ($errors->has('repeat_password'))
                     <span class="error invalid-feedback">{{$errors->first('repeat_password')}}</span>

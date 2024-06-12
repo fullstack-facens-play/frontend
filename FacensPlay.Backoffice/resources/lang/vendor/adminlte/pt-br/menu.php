@@ -16,4 +16,8 @@ return [
     'Important'                     => 'Importante',
     'Warning'                       => 'Aviso',
     'Information'                   => 'Informação',
+
+    'users'                         => 'Usuários',
+    'courses'                       => 'Cursos',
+    'classrooms'                    => 'Aulas',
 ];
