@@ -41,14 +41,14 @@ class Controller extends BaseController
         return $this->serviceBase->importFromFile($request);
     }
 
-    public function getOperationResult($responseModel, $path = "edit")
+    public function getOperationResult($responseModel)
     {
         if ($responseModel instanceof Model)
             $this->success();
         else
             $this->error();
 
-        return redirect($this->resourceName.'/'.$path.'/'.$responseModel->id);
+        return redirect($this->resourceName);
     }
 
     private function success()

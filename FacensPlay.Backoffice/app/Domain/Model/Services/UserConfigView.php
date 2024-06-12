@@ -2,10 +2,15 @@
 
 namespace App\Domain\Model\Services;
 
+use App\User;
+
 class UserConfigView extends ConfigView
 {
-    public function __construct(string $path)
+    public $user;
+    public function __construct(string $path, User $user)
     {
         parent::__construct($path);
+
+        $this->user = $user;
     }
 }

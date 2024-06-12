@@ -21,7 +21,7 @@ class UserFactory extends FactoryBase implements IUserFactory
 
         $userModel->name = $requestBase->input('name');
         $userModel->email = $requestBase->input('email');
-        $userModel->password = $requestBase->input('password');
+        $userModel->password = bcrypt($requestBase->input('password'));
         
         return $userModel;
     }

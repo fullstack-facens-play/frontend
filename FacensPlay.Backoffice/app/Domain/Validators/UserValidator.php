@@ -16,7 +16,11 @@ class UserValidator extends ValidatorBase implements IUserValidator
     public function executeValidation(Request $request, $id = null)
     {
         $this->validatorConfig
-             ->useCommonValidation($id);
+             ->exclusiveTo($id)
+             ->useCommonValidation()
+             ->add('email', 'required|min:3|max:50|unique:users,email,'.$id)
+             ->add('password', 'required|min:8|same:repeat_password')
+             ->add('repeat_password', 'required|min:8|same:password');
 
         parent::executeValidation($request, $id);
     }

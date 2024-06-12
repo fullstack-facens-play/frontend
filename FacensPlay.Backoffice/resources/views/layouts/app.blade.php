@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Facens Play - Administrativo')
 
 @section('content_header')
     <h1>@yield('page-title')</h1>

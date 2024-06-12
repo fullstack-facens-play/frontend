@@ -6,6 +6,7 @@ use App\Domain\Interfaces\Validators\IValidatorBase;
 use App\Domain\Model\Validators\ValidatorConfigBase;
 USE App\Domain\Model\Validators\ValidatorConfigMessages;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Validator;
 
 abstract class ValidatorBase implements IValidatorBase
 {
