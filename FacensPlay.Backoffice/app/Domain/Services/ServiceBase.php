@@ -2,14 +2,15 @@
 
 namespace App\Domain\Services;
 
-use Add\Domain\Enum\AttributeBehavior;
+use App\Domain\Enum\AttributeBehavior;
+use App\Common\Helpers\LogHelper;
 use App\DataAccess\DalBase;
 use App\Domain\Enum\HttpMethod;
 use App\Domain\Factories\FactoryBase;
 use App\Domain\Filter\FilterBase;
 use App\Domain\Interfaces\Services\IServiceBase;
-use App\Domain\Models\Services\ConfigModal;
-use App\Domain\Models\Services\ConfigView;
+use App\Domain\Model\Services\ConfigModal;
+use App\Domain\Model\Services\ConfigView;
 use App\Domain\Validators\ValidatorBase;
 use Illuminate\Http\Request;
 
@@ -100,6 +101,7 @@ abstract class ServiceBase implements IServiceBase
 
     public function delete($id, $routeChild)
     {
+        LogHelper::LogInformation("delete id: " . $id . " for route " . $routeChild);
 
         if ($id == AttributeBehavior::$destroyAll)
         {
@@ -116,6 +118,7 @@ abstract class ServiceBase implements IServiceBase
 
         if (isset($model))
         {
+            LogHelper::LogInformation("Iniciando rotina alertService");
             return $this->alertService->showConfirmModal(
                     new ConfigModal(
                         $routeChild,
@@ -123,6 +126,10 @@ abstract class ServiceBase implements IServiceBase
                         __("general.delete_confirmation") . " " . $model->name . "?"
                     )
             );
+        }
+        else
+        {
+            LogHelper::LogInformation("Não trouxe nada com base no id " . $id . " for route " . $routeChild);
         }
     }
 

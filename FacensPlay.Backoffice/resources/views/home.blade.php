@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
+<<<<<<< HEAD
                 <div class="container">
                 <div class="welcome-message">
                     <h2>Olá {{ Auth::user()->name }}</h2>
@@ -37,6 +38,16 @@
                         <p>Score: ★★★★★</p>
                         <button><a href="../courses-detail/index.html">Ver detalhes</a></button>
                     </div>
+=======
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in!
+>>>>>>> 9e0876fc1dd33cbce34c98aa1216b0e725611145
                 </div>
             </div>
         </div>

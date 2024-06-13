@@ -20,47 +20,25 @@
                @endif
             </div>
             <div class="form-group col-md-4">
-               @component('components.common.forms.select2', [
-                  'select2Config' => $config->statusSelect2Config,
-                  'errors' => $errors
-               ])
-               @endcomponent
+               <label for="name">* {{__('general.email')}}</label>
+               <input required type="text" class="form-control  {{ $errors->has('email') ? 'is-invalid' : '' }}" id="email" name="email" placeholder="{{__('general.email')}}">
+               @if ($errors->has('email'))
+                    <span class="error invalid-feedback">{{$errors->first('email')}}</span>
+               @endif
             </div>
             <div class="form-group col-md-4">
-               @component('components.common.forms.select2', [
-                  'select2Config' => $config->displaySelect2Config,
-                  'errors' => $errors
-               ])
-               @endcomponent
-            </div>
-         </div>
-         <div class="row">
-            <div class="form-group col-md-4">
-               @component('components.common.forms.select2', [
-                  'select2Config' => $config->orderSelect2Config,
-                  'errors' => $errors
-               ])
-               @endcomponent
+               <label for="name">* {{__('general.password')}}</label>
+               <input required type="password" class="form-control  {{ $errors->has('password') ? 'is-invalid' : '' }}" id="password" name="password" placeholder="{{__('general.password')}}">
+               @if ($errors->has('password'))
+                    <span class="error invalid-feedback">{{$errors->first('password')}}</span>
+               @endif
             </div>
             <div class="form-group col-md-4">
-               @component('components.common.forms.datepicker-input', [
-                  'inputConfig' => $config->dateStartInputConfig,
-                  'errors' => $errors
-               ])
-               @endcomponent
-            </div>
-            <div class="form-group col-md-4">
-               @component('components.common.forms.datepicker-input', [
-                  'inputConfig' => $config->dateEndInputConfig,
-                  'errors' => $errors
-               ])
-               @endcomponent
-            </div>
-         </div>
-         <div class="row">
-            <div class="form-group col-md-12">
-               <label for="description">{{__('general.description')}}</label>
-               <input type="text" class="form-control" id="description" name="description" placeholder="{{__('general.description')}}">
+               <label for="name">* {{__('general.repeat_password')}}</label>
+               <input required type="password" class="form-control  {{ $errors->has('repeat_password') ? 'is-invalid' : '' }}" id="repeat_password" name="repeat_password" placeholder="{{__('general.repeat_password')}}">
+               @if ($errors->has('repeat_password'))
+                    <span class="error invalid-feedback">{{$errors->first('repeat_password')}}</span>
+               @endif
             </div>
          </div>
       </div>

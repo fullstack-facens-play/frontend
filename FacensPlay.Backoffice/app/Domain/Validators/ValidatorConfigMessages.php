@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Models\Validators;
+namespace App\Domain\Model\Validators;
 
 class ValidatorConfigMessages
 {

@@ -3,7 +3,7 @@
 namespace App\Domain\Interfaces\Services;
 
 use App\Domain\Filter\FilterBase;
-use App\Domain\Models\Services\ConfigView;
+use App\Domain\Model\Services\ConfigView;
 use Illuminate\Http\Request;
 
 interface IServiceBase

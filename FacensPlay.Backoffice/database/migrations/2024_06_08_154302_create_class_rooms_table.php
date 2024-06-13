@@ -16,8 +16,9 @@ class CreateClassRoomsTable extends Migration
         Schema::create('class_rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('course_id');
-            $table->string('title');
+            $table->string('name');
             $table->string('duration');
+            $table->string('video_src');
             $table->string('description')->nullable();
             $table->timestamps();
 

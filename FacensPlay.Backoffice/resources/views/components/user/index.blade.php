@@ -21,12 +21,9 @@
                         <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
                            <thead>
                               <tr>
-                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">{{ __('general.user.display') }}</th>
-                                 <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">{{ __('general.user.order') }}</th>
-                                 <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">{{ __('general.user.name') }}</th>
-                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">{{ __('general.user.status') }}</th>
-                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">{{ __('general.user.date_start') }}</th>
-                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">{{ __('general.user.date_end') }}</th>
+                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">{{ __('general.id') }}</th>
+                                 <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">{{ __('general.name') }}</th>
+                                 <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">{{ __('general.email') }}</th>
                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"> {{ __('general.actions') }}</th>
                               </tr>
                            </thead>
@@ -41,12 +38,9 @@
                                 @endphp
 
                                 <tr class="{{ $trclass ?? '' }}">
-                                   <td>{{ $user->display->name }}</td>
-                                   <td>{{ $user->order }}</td>
-                                   <td class="dtr-control sorting_1" tabindex="0">{{ $user->name }}</td>
-                                   <td>{{ $user->status->name }}</td>
-                                   <td>{{ $user->date_start }}</td>
-                                   <td>{{ $user->date_end }}</td>
+                                   <td>{{ $user->id }}</td>
+                                   <td>{{ $user->name }}</td>
+                                   <td class="dtr-control sorting_1" tabindex="0">{{ $user->email }}</td>
                                    <td>
                                     @component('components.common.tables.actions', [
                                        "resourceId" => $user->id,

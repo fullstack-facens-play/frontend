@@ -1,6 +1,6 @@
 <?php
 
-namespace Add\Domain\Enum;
+namespace App\Domain\Enum;
 
 class AttributeBehavior
 {

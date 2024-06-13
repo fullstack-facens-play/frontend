@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Domain\Models\Services;
+namespace App\Domain\Model\Services;
 
-use App\Common\Helpers\UriHelper;
 use App\Domain\Enum\MediaType;
 
 abstract class ConfigView 

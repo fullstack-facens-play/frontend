@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Dal;
+namespace App\DataAccess;
 
 use App\DataAccess\DalBase;
-use App\DataAccess\IUserDal;
+use App\DataAccess\Interfaces\IUserDal;
 use App\User;
 
 class UserDal extends DalBase implements IUserDal
