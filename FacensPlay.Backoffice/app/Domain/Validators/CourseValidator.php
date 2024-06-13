@@ -17,7 +17,7 @@ class CourseValidator extends ValidatorBase implements ICourseValidator
     {
         $this->validatorConfig
              ->exclusiveTo($id)
-             ->add('title', 'required|min:3|max:50|unique:courses,title,'.$id)
+             ->add('name', 'required|min:3|max:50|unique:courses,name,'.$id)
              ->add('duration', 'required|min:3');
 
         parent::executeValidation($request, $id);

@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class ClassRoom extends Model
 {
     protected $fillable = [
-        'title', 'description', 'duration', 'video_src'
+        'name', 'description', 'duration', 'video_src'
     ];
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 
 }

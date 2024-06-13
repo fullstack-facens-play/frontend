@@ -17,7 +17,7 @@ class ViewedClassValidator extends ValidatorBase implements IViewedClassValidato
     {
         $this->validatorConfig
              ->exclusiveTo($id)
-             ->add('is_watched', 'required')
+             ->add('is_checked', 'required')
              ->add('student_id', 'required')
              ->add('class_room_id', 'required');
 

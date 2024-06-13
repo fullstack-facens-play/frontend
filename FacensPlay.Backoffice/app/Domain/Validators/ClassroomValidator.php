@@ -17,7 +17,7 @@ class ClassroomValidator extends ValidatorBase implements IClassroomValidator
     {
         $this->validatorConfig
              ->exclusiveTo($id)
-             ->add('title', 'required|min:3|max:50|unique:class_rooms,title,'.$id)
+             ->add('name', 'required|min:3|max:50|unique:class_rooms,name,'.$id)
              ->add('duration', 'required|min:3')
              ->add('video_src', 'required|min:3');
 

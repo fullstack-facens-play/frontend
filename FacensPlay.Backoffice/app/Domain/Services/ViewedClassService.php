@@ -73,7 +73,7 @@ class ViewedClassService extends ServiceBase implements IViewedClassService
         {
             $viewedClass = $this->dalBase->getById($id);
 
-            $config = new ClassroomConfigView
+            $config = new ViewedClassConfigView
             (
                 'components/viewedclass/edit'
                 ,
@@ -112,7 +112,7 @@ class ViewedClassService extends ServiceBase implements IViewedClassService
 
             $config = new ViewedClassConfigView
             (
-                'components/classroom/show'
+                'components/viewedclass/show'
                 ,
                 $viewedClass
             );

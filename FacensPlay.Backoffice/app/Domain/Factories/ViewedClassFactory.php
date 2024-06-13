@@ -19,16 +19,16 @@ class ViewedClassFactory extends FactoryBase implements IViewedClassFactory
     {
         $viewedClassModel = new ViewedClass();
 
-        $viewedClassModel->is_watched = $requestBase->input('is_watched');
+        $viewedClassModel->is_checked = $requestBase->input('is_checked') == 'on';
         $viewedClassModel->student_id = $requestBase->input('student_id');
-        $viewedClassModel->class_room_id = bcrypt($requestBase->input('class_room_id'));
+        $viewedClassModel->class_room_id = $requestBase->input('class_room_id');
         
         return $viewedClassModel;
     }
 
     public function mapUpdate(Model $entityNew, Model $entityOld)
     {
-        $entityOld->is_watched = $entityNew->is_watched;
+        $entityOld->is_checked = $entityNew->is_checked;
         $entityOld->student_id = $entityNew->student_id;
         $entityOld->class_room_id = $entityNew->class_room_id;
 

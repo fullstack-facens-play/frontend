@@ -2,6 +2,7 @@
 
 namespace App\Domain\Services;
 
+use App\Common\Helpers\LogHelper;
 use App\DataAccess\ClassroomDal;
 use App\Domain\Factories\ClassroomFactory;
 use App\Domain\Interfaces\Services\IClassroomService;

@@ -20,4 +20,5 @@ return [
     'users'                         => 'Usuários',
     'courses'                       => 'Cursos',
     'classrooms'                    => 'Aulas',
+    'viewedclasses'                 => 'Aulas assistidas',
 ];

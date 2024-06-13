@@ -314,6 +314,11 @@ return [
             'text' => 'classrooms',
             'url'  => 'classroom',
             'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'viewedclasses',
+            'url'  => 'viewedclass',
+            'icon' => 'fas fa-fw fa-lock',
         ]
     ],
 

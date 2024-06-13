@@ -13,19 +13,14 @@ class CreateViewedclassesTable extends Migration
      */
     public function up()
     {
-        // Schema::create('viewedclasses', function (Blueprint $table) {
-        //     $table->bigIncrements('id');
-        //     $table->foreign('class_id')->references('id')->on('classes');
-        //     $table->foreign('student_id')->references('id')->on('users');
-        //     $table->boolean('is_watched');
-        //     $table->timestamps();
-        // });
-
-        Schema::table('viewedclasses', function (Blueprint $table) {
-            $table->unsignedBigInteger('class_id');
+        Schema::create('viewed_classes', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('class_room_id');
             $table->unsignedBigInteger('student_id');
-            $table->foreign('class_id')->references('id')->on('classes');
+            $table->foreign('class_room_id')->references('id')->on('class_rooms');
             $table->foreign('student_id')->references('id')->on('users');
+            $table->boolean('is_checked');
+            $table->timestamps();
         });
     }
 
@@ -36,6 +31,6 @@ class CreateViewedclassesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('viewedclasses');
+        Schema::dropIfExists('viewed_classes');
     }
 }

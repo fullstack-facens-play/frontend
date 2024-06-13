@@ -15,6 +15,48 @@ return [
         'url'                       => 'Url'
     ],
 
+    'course' => [
+
+        'title'                     => 'Cadastro de Cursos',
+        'add'                       => 'Novo Curso',
+        'edit'                      => 'Editar Curso',
+        'details'                   => 'Detalhes do Curso',
+        'code'                      => 'Código do Curso',
+        'create_title'              => 'Adicionar',
+        'name'                      => 'Nome',
+        'description'               => 'Descrição',
+        'url'                       => 'Url'
+    ],
+
+    'classroom' => [
+
+        'title'                     => 'Cadastro de Aulas',
+        'add'                       => 'Nova aula',
+        'edit'                      => 'Editar Aula',
+        'details'                   => 'Detalhes da Aula',
+        'code'                      => 'Código da Aula',
+        'create_title'              => 'Adicionar',
+        'name'                      => 'Nome',
+        'description'               => 'Descrição',
+        'url'                       => 'Url'
+    ],
+
+    'viewedclass' => [
+
+        'title'                     => 'Cadastro de Aulas Assistidas',
+        'add'                       => 'Novo registro de aula assistida',
+        'edit'                      => 'Editar aula assistida',
+        'details'                   => 'Detalhes da aula assistida',
+        'code'                      => 'Código da aula assistida',
+        'create_title'              => 'Adicionar',
+        'name'                      => 'Nome',
+        'description'               => 'Descrição',
+        'url'                       => 'Url',
+        'classroom'                 => 'Aula',
+        'student'                   => 'Estudante'
+    ],
+
+
 
     'id'                            => '#',
     'name'                          => 'Nome',
@@ -59,11 +101,9 @@ return [
     'message_success'               => 'Operação realizada com sucesso',
     'title_message_success'         => 'Sucesso',
     'message_error'                 => 'Ocorreram problemas para realizar a operação',
-    'title_message_error'           => 'Erro'
-
-
-
-
-
-
+    'title_message_error'           => 'Erro',
+    'duration'                      => 'Duração',
+    'video_src'                     => 'Url do vídeo',
+    'classroom_name'                => 'Aula',
+    'student'                       => 'Estudante'
 ];

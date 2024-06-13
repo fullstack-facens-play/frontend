@@ -13,7 +13,7 @@ class ClassroomConfigView extends ConfigView
     {
         parent::__construct($path);
 
-        $this->$classRoom = $classRoom;
+        $this->classRoom = $classRoom;
         $this->courseSelect2Config = $courseSelect2Config;
     }
 }

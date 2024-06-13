@@ -24,7 +24,7 @@ class ClassRoomController extends Controller
      */
     public function index()
     {
-        $courses = $this->classRoomService->getAllPaging();
+        $classrooms = $this->classRoomService->getAllPaging();
         return view('components/classroom/index', compact('classrooms'));
     }
     
@@ -100,6 +100,6 @@ class ClassRoomController extends Controller
     public function destroy($id)
     {
         $this->classRoomService->destroy($id);
-        return redirect('/course');
+        return redirect('/classroom');
     }
 }

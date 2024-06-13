@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Domain\Services\ClassroomService;
+use App\Domain\Services\ViewedClassService;
 use Illuminate\Http\Request;
 
 class ViewedClassController extends Controller
@@ -12,7 +12,7 @@ class ViewedClassController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->viewedClassService = new ClassroomService();
+        $this->viewedClassService = new ViewedClassService();
         parent::__construct($this->viewedClassService, 'viewedclass');
         
     }
@@ -24,8 +24,8 @@ class ViewedClassController extends Controller
      */
     public function index()
     {
-        $viewedClasses = $this->viewedClassService->getAllPaging();
-        return view('components/classroom/index', compact('viewedClasses'));
+        $viewedclasses = $this->viewedClassService->getAllPaging();
+        return view('components/viewedclass/index', compact('viewedclasses'));
     }
     
         /**

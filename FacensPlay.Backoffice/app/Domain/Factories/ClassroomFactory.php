@@ -19,20 +19,22 @@ class ClassroomFactory extends FactoryBase implements IClassroomFactory
     {
         $classRoomModel = new ClassRoom();
 
-        $classRoomModel->title = $requestBase->input('title');
+        $classRoomModel->name = $requestBase->input('name');
         $classRoomModel->duration = $requestBase->input('duration');
-        $classRoomModel->description = bcrypt($requestBase->input('description'));
+        $classRoomModel->description = $requestBase->input('description');
         $classRoomModel->video_src = $requestBase->input('video_src');
-        
+        $classRoomModel->course_id = $requestBase->input('course_id');
+
         return $classRoomModel;
     }
 
     public function mapUpdate(Model $entityNew, Model $entityOld)
     {
-        $entityOld->title = $entityNew->title;
+        $entityOld->name = $entityNew->name;
         $entityOld->duration = $entityNew->duration;
         $entityOld->description = $entityNew->description;
         $entityOld->video_src = $entityNew->video_src;
+        $entityOld->course_id = $entityNew->course_id;
 
         return $entityOld;   
     }

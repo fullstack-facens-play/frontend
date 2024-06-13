@@ -19,16 +19,16 @@ class CourseFactory extends FactoryBase implements ICourseFactory
     {
         $courseModel = new Course();
 
-        $courseModel->title = $requestBase->input('title');
+        $courseModel->name = $requestBase->input('name');
         $courseModel->duration = $requestBase->input('duration');
-        $courseModel->description = bcrypt($requestBase->input('description'));
+        $courseModel->description = $requestBase->input('description');
         
         return $courseModel;
     }
 
     public function mapUpdate(Model $entityNew, Model $entityOld)
     {
-        $entityOld->title = $entityNew->title;
+        $entityOld->name = $entityNew->name;
         $entityOld->duration = $entityNew->duration;
         $entityOld->description = $entityNew->description;
 

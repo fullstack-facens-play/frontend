@@ -10,33 +10,3 @@
         <button type="submit" class="btn btn-primary">{{__("general.confirm")}}</button>
     </div>
 </form>
-
-<script>
-
-    $(document).on('click', '#confirmButton', function(event) {
-        event.preventDefault();
-        let href = $(this).attr('data-attr');
-        $.ajax({
-            url: href
-            , beforeSend: function() {
-                $('#loader').show();
-            },
-            // return the result
-            success: function(result) {
-                console.log(result);
-                $('#confirmModal').modal("show");
-                $('#confirmModalBody').html(result).show();
-            }
-            , complete: function() {
-                $('#loader').hide();
-            }
-            , error: function(jqXHR, testStatus, error) {
-                console.log(error);
-                alert("Page " + href + " cannot open. Error:" + error);
-                $('#loader').hide();
-            }
-            , timeout: 8000
-        })
-    });
-    
-</script>
