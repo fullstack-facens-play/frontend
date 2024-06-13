@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use App\Domain\Services\ClassroomService;
 use Illuminate\Http\Request;
 
-class ClassRoomController extends Controller
+class ViewedClassController extends Controller
 {
-    private $classRoomService;
+    private $viewedClassService;
 
     public function __construct()
     {
         $this->middleware('auth');
-        $this->classRoomService = new ClassroomService();
-        parent::__construct($this->classRoomService, 'classroom');
+        $this->viewedClassService = new ClassroomService();
+        parent::__construct($this->viewedClassService, 'viewedclass');
         
     }
 
@@ -24,8 +24,8 @@ class ClassRoomController extends Controller
      */
     public function index()
     {
-        $courses = $this->classRoomService->getAllPaging();
-        return view('components/classroom/index', compact('classrooms'));
+        $viewedClasses = $this->viewedClassService->getAllPaging();
+        return view('components/classroom/index', compact('viewedClasses'));
     }
     
         /**
@@ -35,7 +35,7 @@ class ClassRoomController extends Controller
      */
     public function create()
     {
-        return $this->classRoomService->create();
+        return $this->viewedClassService->create();
     }
 
     /**
@@ -47,7 +47,7 @@ class ClassRoomController extends Controller
     public function store(Request $request)
     {
         
-        $responseModel = $this->classRoomService->store($request);
+        $responseModel = $this->viewedClassService->store($request);
         return parent::getOperationResult($responseModel);
     }
 
@@ -59,7 +59,7 @@ class ClassRoomController extends Controller
      */
     public function show($id)
     {
-        return $this->classRoomService->show($id);
+        return $this->viewedClassService->show($id);
     }
 
     /**
@@ -70,7 +70,7 @@ class ClassRoomController extends Controller
      */
     public function edit($id)
     {
-        return $this->classRoomService->edit($id);
+        return $this->viewedClassService->edit($id);
     }
 
     /**
@@ -82,13 +82,13 @@ class ClassRoomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $responseModel = $this->classRoomService->update($request, $id);
+        $responseModel = $this->viewedClassService->update($request, $id);
         return parent::getOperationResult($responseModel);
     }
 
     public function delete($id)
     {
-        return $this->classRoomService->delete($id, route('classroom.destroy', $id));
+        return $this->viewedClassService->delete($id, route('viewedclass.destroy', $id));
     }
 
     /**
@@ -99,7 +99,7 @@ class ClassRoomController extends Controller
      */
     public function destroy($id)
     {
-        $this->classRoomService->destroy($id);
-        return redirect('/course');
+        $this->viewedClassService->destroy($id);
+        return redirect('/viewedclass');
     }
 }

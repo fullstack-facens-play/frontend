@@ -2,32 +2,32 @@
 
 namespace App\Domain\Services;
 
-use App\Domain\Interfaces\Services\IUserService;
-use App\DataAccess\UserDal;
-use App\Domain\Factories\UserFactory;
+use App\DataAccess\CourseDal;
+use App\Domain\Interfaces\Services\ICourseService;
+use App\Domain\Factories\CourseFactory;
+use App\Domain\Model\Entities\Course;
 use App\Domain\Model\Services\ConfigView;
-use App\Domain\Model\Services\UserConfigView;
-use App\Domain\Validators\UserValidator;
-use App\User;
+use App\Domain\Model\Services\CourseConfigView;
+use App\Domain\Validators\CourseValidator;
 use Illuminate\Http\Request;
 
-class UserService extends ServiceBase implements IUserService
+class CourseService extends ServiceBase implements ICourseService
 {
-    
+
     public function __construct()
     {
-        parent::__construct(new UserDal(), new UserFactory(), new UserValidator());
+        parent::__construct(new CourseDal(), new CourseFactory(), new CourseValidator());
     }
 
     public function create(ConfigView $config = null)
     {
         if (!isset($config))
         {
-            $config = new UserConfigView
+            $config = new CourseConfigView
             (
-                'components/user/create'
+                'components/course/create'
                 ,
-                new User()
+                new Course()
             );
         }
 
@@ -43,13 +43,13 @@ class UserService extends ServiceBase implements IUserService
     {
         if (!isset($config))
         {
-            $user = $this->dalBase->getById($id);
+            $course = $this->dalBase->getById($id);
 
-            $config = new UserConfigView
+            $config = new CourseConfigView
             (
-                'components/user/edit'
+                'components/course/edit'
                 ,
-                $user
+                $course
             );
         }
 
@@ -60,13 +60,13 @@ class UserService extends ServiceBase implements IUserService
     {
         if (!isset($config))
         {
-            $user = $this->dalBase->getById($id);
+            $course = $this->dalBase->getById($id);
 
-            $config = new UserConfigView
+            $config = new CourseConfigView
             (
-                'components/user/show'
+                'components/course/show'
                 ,
-                $user
+                $course
             );
         }
 

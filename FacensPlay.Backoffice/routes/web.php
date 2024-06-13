@@ -39,6 +39,11 @@ Route::get('/payment/edit/{id}', 'PaymentController@edit');
 Route::get('payment/delete/{id}', 'PaymentController@delete');
 Route::get('/payment/show/{id}', 'PaymentController@show');
 
+Route::resource('viewedclass', 'ViewedClassController');
+Route::get('/viewedclass/edit/{id}', 'ViewedClassController@edit');
+Route::get('viewedclass/delete/{id}', 'ViewedClassController@delete');
+Route::get('/viewedclass/show/{id}', 'ViewedClassController@show');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

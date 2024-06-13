@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ClassRoom extends Model
 {
     protected $fillable = [
-        'title', 'description'
+        'title', 'description', 'duration', 'video_src'
     ];
 
 }
