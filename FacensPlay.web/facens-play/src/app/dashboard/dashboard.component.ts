@@ -31,4 +31,8 @@ export class DashboardComponent {
 
   ngOnInit(): void {
   }
+
+  marcarAssistido(){
+    console.log("teste");
+  }
 }
