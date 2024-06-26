@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -9,7 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CadastroUsuarioComponent {
   cadastroForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.cadastroForm = this.fb.group({
@@ -26,5 +30,8 @@ export class CadastroUsuarioComponent {
       // Redirect to courses-dashboard
       // this.router.navigate(['/courses-dashboard']);
     }
+  }
+
+  onNavigate(): void {
   }
 }

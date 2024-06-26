@@ -1,7 +1,7 @@
 <div class="login-container">
     <img src="assets/images/facens-logo.png" alt="Facens Logo" class="logo">
     <h2>Informe seus dados para o login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()"> 
         <label for="perfil">Perfil</label>
         <select formControlName="userProfile" id="user-profile" required>
             <option value="Aluno">Aluno</option>
@@ -20,7 +20,7 @@
     <button class="social-btn twitter">Twitter</button>
     <button class="social-btn facebook">Facebook</button>
     <div class="links">
-        <a href="#">Esqueceu sua senha?</a>
-        <a href="#">Novo cadastro</a>
+        <a>Esqueceu sua senha?</a>
+        <a href="/cadastro">Novo cadastro</a>
     </div> 
 </div>

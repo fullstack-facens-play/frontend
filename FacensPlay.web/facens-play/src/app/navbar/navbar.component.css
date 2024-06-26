@@ -1,0 +1,48 @@
+ody {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000080;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  nav {
+    flex: 1;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .header-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .header-icons img {
+    width: 24px;
+    height: 24px;
+  }
