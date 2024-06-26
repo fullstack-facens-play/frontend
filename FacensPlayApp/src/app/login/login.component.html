@@ -1,0 +1,36 @@
+<div class="login-container">
+    <img src="../../assets/images/facens-logo.png" alt="Facens Logo" class="logo">
+    <h2>Informe seus dados para o login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <label for="perfil">Perfil</label>
+        <select name="userType" id="userType" required formControlName="userType">
+            <option *ngFor="let userType of loginService.onGetUserTypes()" value="userType">{{userType}}</option>
+        </select>
+        <div *ngIf="loginForm.get('userType').errors && loginForm.get('userType').touched">
+            <small *ngIf="loginForm.get('userType').errors.required">Seleção do perfil é obrigatória</small>
+        </div>
+        
+        <label for="userName">Email</label>
+        <input type="email" id="userName" name="userName" placeholder="name@example.com" required formControlName="userName">
+        <div *ngIf="loginForm.get('userName').errors && loginForm.get('userName').touched">
+            <small *ngIf="loginForm.get('userName').errors.required">Campo de usuário é obrigatório</small>
+            <small *ngIf="loginForm.get('userName').errors.email">Informe um email válido</small>    
+        </div>
+
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" placeholder="*********" required formControlName="password">
+        <div *ngIf="loginForm.get('password').errors && loginForm.get('password').touched">
+            <small *ngIf="loginForm.get('password').errors.required">Campo de usuário é obrigatório</small>
+            <small *ngIf="loginForm.get('password').errors.minlength">Quantidade insuficiente de caracteres de senha</small>    
+        </div>
+
+        <button type="submit" class="login-btn" [disabled]="!loginForm.valid">Login</button>
+    </form>
+    <p>ou se desejar, realize o login com:</p>
+    <button class="social-btn twitter">Twitter</button>
+    <button class="social-btn facebook">Facebook</button>
+    <div class="links">
+        <a href="#">Esqueceu sua senha?</a>
+        <a href="register-dashboard/index.html">Novo cadastro</a>
+    </div>
+</div>

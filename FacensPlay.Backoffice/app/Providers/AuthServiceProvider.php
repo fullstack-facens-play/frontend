@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use App\Common\Helpers\LogHelper;
+use App\Domain\Model\Entities\Log;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +28,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Passport::routes();
         //
     }
 }
