@@ -1,29 +1,39 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../services/login.service';
+import { AuthService } from '../common/services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private loginService: LoginService
+    private formBuilder: FormBuilder, public authService: AuthService, private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      userProfile: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+    this.loginForm = this.formBuilder.group({
+      userName: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      userType: ['', Validators.required]
     });
+  }
+
+  get userName() {
+    return this.loginForm.controls['userName'];
+  }
+
+  get password() {
+    return this.loginForm.controls['password'];
+  }
+
+  get userType() {
+    return this.loginForm.controls['userType'];
   }
 
   onSubmit(): void {
@@ -38,16 +48,16 @@ export class LoginComponent {
 
   onLogin() {
     console.log("onLogin!")
-    console.log(this.loginForm.value)
+    console.log(this.loginForm);
     if (this.loginForm.valid) {
       console.log("form is valid!")
-      this.loginService.login(this.loginForm.value["email"], this.loginForm.value["password"])
+      this.authService.onLogin(this.loginForm.controls['userName'].value, this.loginForm.controls['password'].value)
       .subscribe((res: any) => {
         console.log(res);
         // Store the access token in the localstorage
         localStorage.setItem('access_token', res.access_token);
         // Navigate to home page
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/']);
       }, (err: any) => {
         // This error can be internal or invalid credentials
         // You need to customize this based on the error.status code
@@ -56,7 +66,7 @@ export class LoginComponent {
   }
 
   onLogout(): void {
-    this.loginService.logout()
+    this.authService.onLogout()
       .subscribe(() => {
         localStorage.removeItem('access_token');
         this.router.navigate(['/login']);

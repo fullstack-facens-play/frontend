@@ -1,11 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GlobalService } from './global.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class AuthService {
 
   options: any;
 
@@ -19,7 +19,7 @@ export class LoginService {
   }
 
   onGetUserTypes(): Array<string> {
-    return ['Aluno', 'Professor'];
+    return ['', 'Aluno', 'Professor'];
   }
 
     /**
@@ -27,10 +27,10 @@ export class LoginService {
    * @param e The email address
    * @param p The password string
    */
-    login(e: string, p: string) {
+    onLogin(e: string, p: string) {
       return this.http.post(GlobalService.getAuthSettings().AUTH_URL, {
-        grant_type: 'password',
-        client_id: '2',
+        grant_type: GlobalService.getAuthSettings().GRANT_TYPE,
+        client_id: GlobalService.getAuthSettings().CLIENT_ID,
         client_secret: GlobalService.getAuthSettings().CLIENT_SECRET,
         username: e,
         password: p,
@@ -40,8 +40,13 @@ export class LoginService {
     /**
      * Revoke the authenticated user token
      */
-    logout() {
-      this.options.headers.Authorization = 'Bearer ' + localStorage.getItem('access_token');
-      return this.http.get(GlobalService.getAuthSettings().API_URL + '/token/revoke', this.options);
+    onLogout() {
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+        })
+      };
+
+      return this.http.get(GlobalService.getAuthSettings().API_URL + '/token/revoke', httpOptions);
     }
 }

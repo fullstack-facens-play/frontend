@@ -1,26 +1,36 @@
 <div class="login-container">
-    <img src="assets/images/facens-logo.png" alt="Facens Logo" class="logo">
+    <img src="../../assets/images/facens-logo.png" alt="Facens Logo" class="logo">
     <h2>Informe seus dados para o login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onLogin()"> 
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
         <label for="perfil">Perfil</label>
-        <select formControlName="userProfile" id="user-profile" required>
-            <option value="Aluno">Aluno</option>
-            <option value="Professor">Professor</option>
+        <select name="userType" id="userType" required formControlName="userType">
+            <option *ngFor="let userType of authService.onGetUserTypes()" value="userType">{{userType}}</option>
         </select>
+        <div *ngIf="userType.errors && userType.touched">
+            <small *ngIf="loginForm.controls['userType']?.invalid">Seleção do perfil é obrigatória</small>
+        </div>
         
-        <label for="email">Email</label>
-        <input type="email" id="email" formControlName="email" placeholder="name@example.com" required>
+        <label for="userName">Email</label>
+        <input type="email" id="userName" name="userName" placeholder="name@example.com" required formControlName="userName">
+        <div *ngIf="userName?.errors && userName.touched">
+            <small *ngIf="userName?.invalid">Campo de usuário é obrigatório</small>
+            <small *ngIf="userName?.errors?.['email']">Informe um email válido</small>    
+        </div>
 
         <label for="password">Senha</label>
-        <input type="password" id="password" formControlName="password" placeholder="*********" required>
+        <input type="password" id="password" name="password" placeholder="*********" required formControlName="password">
+        <div *ngIf="password.errors && password.touched">
+            <small *ngIf="password?.invalid">Campo de usuário é obrigatório</small>
+            <small *ngIf="password?.errors?.['minlength']">Quantidade insuficiente de caracteres de senha</small>    
+        </div>
 
-        <button type="submit" class="login-btn">Login</button>
+        <button type="submit" class="login-btn" [disabled]="!loginForm.valid">Login</button>
     </form>
     <p>ou se desejar, realize o login com:</p>
     <button class="social-btn twitter">Twitter</button>
     <button class="social-btn facebook">Facebook</button>
     <div class="links">
-        <a>Esqueceu sua senha?</a>
-        <a href="/cadastro">Novo cadastro</a>
-    </div> 
+        <a href="#">Esqueceu sua senha?</a>
+        <a href="register-dashboard/index.html">Novo cadastro</a>
+    </div>
 </div>

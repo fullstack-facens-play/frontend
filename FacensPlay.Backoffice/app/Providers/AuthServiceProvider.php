@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Auth\Token\CustomAccessToken;
 use App\Common\Helpers\LogHelper;
 use App\Domain\Model\Entities\Log;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;

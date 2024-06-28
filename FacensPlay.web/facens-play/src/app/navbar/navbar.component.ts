@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../common/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   constructor(
     private router: Router,
-    private loginService: LoginService
+    private authService: AuthService
   ) { }
 
   onLogout(): void {
-    this.loginService.logout()
+    this.authService.onLogout()
       .subscribe(() => {
         localStorage.removeItem('access_token');
         this.router.navigate(['/login']);
